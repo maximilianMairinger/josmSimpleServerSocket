@@ -1,4 +1,11 @@
 import josmSimpleServerSocket from "./../../app/src/josmSimpleServerSocket"
-//const testElem = document.querySelector("#test")
+import { constructIndexStore } from "./lib/indexing"
+import { Data } from "josm"
 
-josmSimpleServerSocket()
+
+let index = constructIndexStore((s: string) => new Data("New Session"))
+
+josmSimpleServerSocket((s) => {
+  let v = index(s)
+  return v
+})
