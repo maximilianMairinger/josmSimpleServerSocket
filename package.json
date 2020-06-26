@@ -1,6 +1,6 @@
 {
   "name": "josm-simple-server-socket",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple server side socket for josm.",
   "main": "app/dist/josmSimpleServerSocket.js",
   "types": "app/dist/josmSimpleServerSocket.d.ts",
