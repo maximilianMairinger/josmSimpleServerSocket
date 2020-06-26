@@ -6,9 +6,9 @@
   "types": "app/dist/josmSimpleServerSocket.d.ts",
   "scripts": {
     "build": "tsc -p ./tsconfig.prod.json",
-    "dev": "webpack --config webpack.dev.config.js",
+    "dev": "rollup --config rollup.dev.config.js -w",
     "deploy": "npm run build && npm publish",
-    "test": "node ./test/dist/test-bundle"
+    "test": "node ./test/dist/josmSimpleServerSocket"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,16 @@
   },
   "homepage": "https://github.com/maximilianMairinger/josmSimpleServerSocket#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.1.0",
+    "@rollup/plugin-typescript": "^5.0.0",
     "@types/node": "^13.13.4",
+    "@types/ws": "^7.2.5",
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
     "postcss-loader": "^3.0.0",
+    "rollup": "^2.18.0",
     "terser-webpack-plugin": "^2.3.6",
     "to-string-loader": "^1.1.6",
     "ts-loader": "^7.0.2",
@@ -40,5 +46,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-inject-plugin": "^1.5.4",
     "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "ws": "^7.3.0"
   }
 }
